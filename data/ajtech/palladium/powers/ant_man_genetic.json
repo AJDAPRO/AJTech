@@ -1,0 +1,32 @@
+{
+    "name": "Ant-Man(Genetic)",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/red_concrete.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "test_dummy": {
+            "type": "palladium:dummy",
+            "icon": "palladium:redstone_flux_crystal",
+            "title": "Genetic Shrinking Powers",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": [0, 0],
+            "description": "You have injectd yourself with Pym Particles in order to control your abilities you must make a suit",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}
