@@ -1,0 +1,13 @@
+{
+    "pack": {
+        "id": "ajtech",
+        "pack_format": 15,
+        "description": "A Minecraft Palladium addon inspired by the MCU and other movies/TV Shows",
+        "version": "1.0.0"
+    },
+    "dependencies": {
+        "common": {},
+        "fabric": {},
+        "forge": {}
+    }
+}

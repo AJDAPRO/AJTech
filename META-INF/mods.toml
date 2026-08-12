@@ -1,0 +1,21 @@
+modLoader="lowcodefml"
+showAsResourcePack = false
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="ajtech"
+version="1.0.0"
+logoFile = "logo.png"
+logoBlur = false
+displayName="AJ Tech"
+description='''
+A Minecraft Palladium addon inspired by the MCU and other movies/TV Shows
+'''
+
+[[dependencies.ajtech]]
+modId = "palladium"
+mandatory = true
+versionRange = "[4.5.7,)"
+ordering = "NONE"
+side = "BOTH"

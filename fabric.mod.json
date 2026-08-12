@@ -1,0 +1,13 @@
+{
+    "schemaVersion": 1,
+    "authors": [
+        "AdryanThePro1"
+    ],
+    "environment": "*",
+    "id": "ajtech",
+    "version": "1.0.0",
+    "name": "AJ Tech",
+    "description": "A Minecraft Palladium addon inspired by the MCU and other movies/TV Shows",
+    "icon": "logo.png",
+    "license": "All rights reserved"
+}
