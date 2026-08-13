@@ -2,13 +2,13 @@
     "name": "Ant-Man(Genetic)",
     "persistent_data": true,
     "background": "minecraft:textures/block/red_concrete.png",
-    "icon": "minecraft:wither_skeleton_skull",
+    "icon": "ajtech:textures/icons/red_pym_disc.png",
     "gui_display_type": "tree",
     "abilities": {
         "test_dummy": {
             "type": "palladium:dummy",
-            "icon": "palladium:redstone_flux_crystal",
-            "title": "Genetic Shrinking Powers",
+            "icon": "ajtech:textures/icons/red_pym_vial.png",
+            "title": "Genetic PYM Powers",
             "bar_color": "red",
             "hidden": false,
             "hidden_in_bar": true,
@@ -28,9 +28,9 @@
                 "unlocking": []
             }
         },
-        "pym_beam": {
+        "pym_beam_red": {
             "type": "palladium:energy_beam",
-            "icon": "palladium:redstone_flux_crystal",
+            "icon": "ajtech:textures/icons/red_pym_disc.png",
             "title": "Shrink Beam",
             "bar_color": "red",
             "hidden": false,
@@ -62,7 +62,7 @@
         },
         "pym_beam_blue": {
             "type": "palladium:energy_beam",
-            "icon": "minecraft:light_blue_candle",
+            "icon": "ajtech:textures/icons/blue_pym_disc.png",
             "title": "Grow beam",
             "bar_color": "blue",
             "hidden": false,
@@ -80,6 +80,37 @@
             "smelt_blocks": false,
             "commands_on_block_hit": [],
             "commands_on_entity_hit": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "pym_gamma_overload":{
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/red_pym_disc.png",
+            "title": "PYM Overload",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": [0, 3],
+            "description": "Overload your body with PYM Tachyons and release it all dealing damage to everything nearby",
+            "first_tick_commands": [
+                "tag @s add pym_overload"
+            ],
+            "last_tick_commands": [
+                "tag @s remove pym_overload"
+            ],
+            "commands": [
+                "execute at @s as @e[distance=..7,tag=!pym_overload] run damage @s 2"
+            ],
             "conditions": {
                 "enabling": [
                     {
