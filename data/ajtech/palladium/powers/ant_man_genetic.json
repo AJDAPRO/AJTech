@@ -6,7 +6,7 @@
     "gui_display_type": "tree",
     "abilities": {
         "test_dummy": {
-            "type": "palladium:dummy",
+            "type": "palladium:command",
             "icon": "ajtech:textures/icons/red_pym_vial.png",
             "title": "Genetic PYM Powers",
             "bar_color": "red",
@@ -14,17 +14,18 @@
             "hidden_in_bar": true,
             "list_index": -1,
             "gui_position": [0, 0],
+            "first_tick_commands": [
+                "tag @s add pym_safe"
+            ],
+            "last_tick_commands": [
+                "tag @s remove pym_safe"
+            ],
+            "commands": [
+                "null"
+            ],
             "description": "You have injectd yourself with Pym Particles in order to control your abilities you must make a suit",
             "conditions": {
-                "enabling": [
-                    {
-                        "type": "palladium:action",
-                        "cooldown": 0,
-                        "key_type": "key_bind",
-                        "needs_empty_hand": false,
-                        "allow_scrolling_when_crouching": true
-                    }
-                ],
+                "enabling": [],
                 "unlocking": []
             }
         },
@@ -47,7 +48,9 @@
             "cause_fire": false,
             "smelt_blocks": false,
             "commands_on_block_hit": [],
-            "commands_on_entity_hit": [],
+            "commands_on_entity_hit": [
+                "execute positioned ~ ~ ~ run scale subtract pehkui:base 0.01 @e[limit=1,distance=..3,tag=!pym_safe]"
+            ],
             "conditions": {
                 "enabling": [
                     {
@@ -79,7 +82,9 @@
             "cause_fire": false,
             "smelt_blocks": false,
             "commands_on_block_hit": [],
-            "commands_on_entity_hit": [],
+            "commands_on_entity_hit": [
+                "execute positioned ~ ~ ~ run scale add pehkui:base 0.01 @e[distance=..3,tag=!pym_safe]"
+            ],
             "conditions": {
                 "enabling": [
                     {
@@ -96,7 +101,7 @@
             "type": "palladium:command",
             "icon": "ajtech:textures/icons/red_pym_disc.png",
             "title": "PYM Overload",
-            "bar_color": "red",
+            "bar_color": "purple",
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 4,
@@ -118,6 +123,54 @@
                         "cooldown": 0,
                         "key_type": "key_bind",
                         "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "pym_shrink": {
+            "type": "palladium:size",
+            "icon": "palladium:textures/icon/size.png",
+            "title": "Red Pym Particles",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [1,0],
+            "description": "null",
+            "scale": 0.1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "pym_grow": {
+            "type": "palladium:size",
+            "icon": "palladium:textures/icon/size.png",
+            "title": "Blue Pym Parciles",
+            "bar_color": "blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": [-1, 0],
+            "description": "null",
+            "scale": 10,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
                     }
                 ],
                 "unlocking": []
