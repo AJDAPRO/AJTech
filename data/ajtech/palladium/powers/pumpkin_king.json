@@ -55,7 +55,15 @@
                         "allow_scrolling_when_crouching": true
                     }
                 ],
-                "unlocking": []
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:pumpkin_seeds"
+                        },
+                        "amount": 3
+                    }
+                ]
             }
         }
     }

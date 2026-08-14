@@ -97,7 +97,7 @@
                 "unlocking": []
             }
         },
-        "pym_gamma_overload":{
+        "pym_radiation_overload":{
             "type": "palladium:command",
             "icon": "ajtech:textures/icons/red_pym_disc.png",
             "title": "PYM Overload",
