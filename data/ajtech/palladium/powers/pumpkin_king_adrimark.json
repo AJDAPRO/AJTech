@@ -1,0 +1,147 @@
+{
+    "name": "pumpkin king adrimark",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/pumpkin_side.png",
+    "icon": "minecraft:jack_o_lantern",
+    "gui_display_type": "tree",
+    "abilities": {
+        "Pumpkin King": {
+            "type": "palladium:command",
+            "icon": "minecraft:jack_o_lantern",
+            "title": "King Pumpkin",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 3,
+            "gui_position": [0, 0],
+            "description": "You have been granted the powers of Adrimark use them wisely",
+            "first_tick_commands": [
+                "team add pumpkin"
+            ],
+            "last_tick_commands": [
+                "team leave @s"
+            ],
+            "commands": [
+                "team join pumpkin @s"
+            ],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        },
+        "summon pumpkin": {
+            "type": "palladium:command",
+            "icon": "minecraft:carved_pumpkin",
+            "title": "Summon Follower",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0, 1],
+            "description": "Summon a follower that attacks others",
+            "first_tick_commands": [
+               "summon minecraft:vindicator ~ ~1 ~ {Johny:1,Team:pumpkin,ArmorItems:[{},{},{},{id:jack_o_lantern,Count:1}]}"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 1200,
+                        "ticks": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:pumpkin_seeds"
+                        },
+                        "amount": 3
+                    }
+                ]
+            }
+        },
+                "pumpkin bomb": {
+            "type": "palladium:projectile",
+            "icon": "minecraft:jack_o_lantern",
+            "title": "pumpkin bomb",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": [0, 2],
+            "description": "throw a pumpkin bomb",
+            "entity_type": "minecraft:fireball",
+            "entity_data": "null",
+            "inaccuracy": 0,
+            "velocity": 3,
+            "swinging_arm": "main_arm",
+            "damage_from_player": 3,
+            "ignore_player_movement": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 60,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:gunpowder"
+                        },
+                        "amount": 5
+                    }
+                ]
+            }
+        },
+        "Lifesteal": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:purple_wool replace grass",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace tall_grass",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace rose_bush",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace grass_block"
+            ],
+            "last_tick_commands": [
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:coarse_dirt replace green_wool",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:dead_bush replace purple_wool",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:air replace blue_wool"
+            ],
+            "commands": [
+                "execute if block ~ ~-1 ~ green_wool run give @s potato 9"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 60,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}
