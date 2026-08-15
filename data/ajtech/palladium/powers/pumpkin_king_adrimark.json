@@ -48,7 +48,7 @@
                 "enabling": [
                     {
                         "type": "palladium:activation",
-                        "cooldown": 1200,
+                        "cooldown": 400,
                         "ticks": 20,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
@@ -66,16 +66,16 @@
                 ]
             }
         },
-                "pumpkin bomb": {
+                "Pumpkin Bomb": {
             "type": "palladium:projectile",
             "icon": "minecraft:jack_o_lantern",
-            "title": "pumpkin bomb",
+            "title": "Pumpkin Bomb",
             "bar_color": "orange",
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 1,
-            "gui_position": [0, 2],
-            "description": "throw a pumpkin bomb",
+            "gui_position": [0,-1],
+            "description": "Throw a Pumpkin bomb",
             "entity_type": "minecraft:fireball",
             "entity_data": "null",
             "inaccuracy": 0,
@@ -87,7 +87,7 @@
                 "enabling": [
                     {
                         "type": "palladium:activation",
-                        "cooldown": 60,
+                        "cooldown": 50,
                         "ticks": 1,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
@@ -107,14 +107,14 @@
         },
         "Lifesteal": {
             "type": "palladium:command",
-            "icon": "minecraft:command_block",
-            "title": "null",
-            "bar_color": "light_gray",
+            "icon": "minecraft:pumpkin_seeds",
+            "title": "Plant Eat",
+            "bar_color": "lime",
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 3,
-            "gui_position": "null",
-            "description": "null",
+            "gui_position": [-1, 0],
+            "description": "Turns all plant life around you to potatoes what you thought I was gonna make you a cannibal",
             "first_tick_commands": [
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:purple_wool replace grass",
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace tall_grass",
@@ -140,8 +140,57 @@
                         "allow_scrolling_when_crouching": true
                     }
                 ],
-                "unlocking": []
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:wheat_seeds"
+                        },
+                        "amount": 3
+                    }
+                ]
+            }
+        },
+        "ALDRIAN GAMBLING": {
+            "type": "palladium:command",
+            "icon": "minecraft:deepslate_diamond_ore",
+            "title": "CLANKER Gamble",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": [1, 1],
+            "description": "Call upon a robotic version of yourself to gamble for you",
+            "first_tick_commands": [
+                "execute unless predicate ajtech:randomdiamond run fill ~1 ~2 ~1 ~-1 ~-1 ~-1 deepslate_diamond_ore replace deepslate",
+                "execute if predicate ajtech:randomdiamond run fill ~1 ~2 ~1 ~-1 ~-1 ~-1 deepslate replace deepslate_diamond_ore",
+                "execute unless predicate ajtech:randomdiamond run fill ~1 ~2 ~1 ~-1 ~-1 ~-1 diamond_ore replace stone",
+                "execute if predicate ajtech:randomdiamond run fill ~1 ~2 ~1 ~-1 ~-1 ~-1 stone replace diamond_ore"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 24000,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:diamond"
+                        },
+                        "amount": 9
+                    }
+                ]
             }
         }
+        
     }
 }
