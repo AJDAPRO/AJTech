@@ -36,7 +36,7 @@
             "bar_color": "orange",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": 0,
+            "list_index": 1,
             "gui_position": [0, 1],
             "description": "Summon a follower that attacks others",
             "first_tick_commands": [
@@ -73,7 +73,7 @@
             "bar_color": "orange",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": 1,
+            "list_index": 0,
             "gui_position": [0,-1],
             "description": "Throw a Pumpkin bomb",
             "entity_type": "minecraft:fireball",
@@ -105,7 +105,7 @@
                 ]
             }
         },
-        "Lifesteal": {
+        "Plant steal": {
             "type": "palladium:command",
             "icon": "minecraft:pumpkin_seeds",
             "title": "Plant Eat",
@@ -114,12 +114,16 @@
             "hidden_in_bar": false,
             "list_index": 3,
             "gui_position": [-1, 0],
-            "description": "Turns all plant life around you to potatoes what you thought I was gonna make you a cannibal",
+            "description": "Turns all plant life around you to potatoes... what? you thought I was gonna make you a cannibal?... well try it near pumpkins",
             "first_tick_commands": [
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:purple_wool replace grass",
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace tall_grass",
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace rose_bush",
-                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace grass_block"
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace grass_block",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace podzol",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace moss_block",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:green_wool replace farmland",
+                "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:blue_wool replace oak_leaves"
             ],
             "last_tick_commands": [
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:coarse_dirt replace green_wool",
@@ -127,13 +131,14 @@
                 "execute at @s run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 minecraft:air replace blue_wool"
             ],
             "commands": [
-                "execute if block ~ ~-1 ~ green_wool run give @s potato 9"
+                "execute if block ~ ~-1 ~ green_wool run give @s potato 9",
+                "execute if block ~ ~-1 ~ pumpkin run give @s pumpkin_pie 9"
             ],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:activation",
-                        "cooldown": 60,
+                        "cooldown": 1600,
                         "ticks": 1,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
