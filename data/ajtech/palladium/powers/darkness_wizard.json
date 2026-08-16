@@ -1,0 +1,279 @@
+{
+    "name": "darkness_wizard",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "baseunlock": {
+            "type": "palladium:command",
+            "icon": "minecraft:wither_skeleton_skull",
+            "title": "Darkness Wizards",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 2,
+            "gui_position": [0, 0.3],
+            "description": "You have taken the power of a wither skeleton and put it into yourself",
+            "first_tick_commands": [
+                "tag @s add darkwiz_safe"
+            ],
+            "last_tick_commands": [
+                "ability lock @s ajtech:darkness_wizard all"
+            ],
+            "commands": [
+                "effect clear @s minecraft:wither",
+                "tag @s remove darkwiz_safe"
+            ],
+            "conditions": {
+                "enabling": [],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:wither_skeleton_skull"
+                        },
+                        "amount": 1
+                    }
+                ]
+            }
+        },
+        "base_attributes": {
+            "type": "palladium:command",
+            "icon": "minecraft:black_concrete",
+            "title": "Power Toggle",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": [0, -0.2],
+            "description": "Toggle your power",
+            "first_tick_commands": [
+                "attribute @s palladium:flight_speed base set 1.0",
+                "attribute @s minecraft:generic.armor base set 15.0",
+                "attribute @s palladium:fall_resistance base set 50.0",
+                "attribute @s minecraft:generic.max_health base set 25"
+            ],
+            "last_tick_commands": [
+                "attribute @s palladium:flight_speed base set 0.0",
+                "attribute @s minecraft:generic.armor base set 0.0",
+                "attribute @s palladium:fall_resistance base set 1.0",
+                "attribute @s minecraft:generic.max_health base set 20"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "baseunlock"
+                    }
+                ]
+            }
+        },
+        "darkness Laser": {
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:wither_rose",
+            "title": "Darknes Laser",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0.4, -1],
+            "description": "Shoot out a laser out of your energy",
+            "energy_beam": "ajtech:wizard_dark",
+            "damage_type": "null",
+            "damage": 5,
+            "max_distance": 30,
+            "speed": 0.5,
+            "set_on_fire_seconds": 0,
+            "cause_fire": false,
+            "smelt_blocks": false,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [
+                "execute positioned ~ ~ ~ run effect give @e[distance=..2] minecraft:wither 5 1 false"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "base_attributes"
+                    }
+                ]
+            }
+        },
+                "Skull Shoot": {
+            "type": "palladium:projectile",
+            "icon": "minecraft:wither_skeleton_skull",
+            "title": "Skull Shot",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": [0,-1],
+            "description": "Throw a Wither shekelon skull",
+            "entity_type": "minecraft:wither_skull",
+            "entity_data": "null",
+            "inaccuracy": 0,
+            "velocity": 3,
+            "swinging_arm": "main_arm",
+            "damage_from_player": 3,
+            "ignore_player_movement": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 50,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "base_attributes"
+                    }
+                ]
+            }
+        },
+        "ghost_1": {
+            "type": "palladium:invisibility",
+            "icon": "minecraft:nether_star",
+            "title": "Ghost",
+            "bar_color": "black",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "gui_position": [-0.4, -1],
+            "description": "Make yourself a temporary ghost",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 180,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "base_attributes"
+                    }
+                ]
+            }
+        },
+        "ghost_2": {
+            "type": "palladium:intangibility",
+            "icon": "minecraft:black_dye",
+            "title": "null",
+            "bar_color": "black",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": 6,
+            "gui_position": "null",
+            "description": "intangibility for the ghost ability",
+            "vertical": false,
+            "whitelist": "null",
+            "blacklist": "palladium:prevents_intangibility",
+            "conditions": {
+                "enabling": [],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "ghost_1"
+                    }
+                ]
+            }
+        },
+        "energy overload": {
+            "type": "gravecore:aoe_damage",
+            "icon": "minecraft:beacon",
+            "title": "overload",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 5,
+            "gui_position": [0.8, -1],
+            "description": "overload your body",
+            "radius": 10,
+            "damage": 85,
+            "fire_ticks": 0,
+            "damage_type": "null",
+            "cone": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 10,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "base_attributes"
+                    }
+                ]
+            }
+        },
+        "Atom Size": {
+            "type": "palladium:size",
+            "icon": "palladium:textures/icon/size.png",
+            "title": "Atom Size",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": [-0.8, -1],
+            "description": "Resize yourself to the size of an atom",
+            "scale": 0.025,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 180,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "base_attributes"
+                    }
+                ]
+            }
+        }
+    }
+}

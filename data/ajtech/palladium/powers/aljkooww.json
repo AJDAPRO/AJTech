@@ -1,0 +1,649 @@
+{
+    "name": "Warden Essense",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/sculk.png",
+    "icon": "minecraft:sculk_vein",
+    "gui_display_type": "tree",
+    "abilities": {
+        "Warden Strength": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:sculk_catalyst",
+            "title": "Toggle Strength",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": [0, 0],
+            "description": "Toggles your overall strength and durability",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "durability_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:chainmail_chestplate",
+            "title": "Durability 1",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [-1, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.armor",
+            "amount": 10,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "durability_2"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 3,
+                        "flat_levels": true
+                    }
+                ]
+            }
+        },
+        "durability_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "Durability 2",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [-2, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.armor",
+            "amount": 15,
+            "operation": 0,
+            "uuid": "498ba4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "durability_3"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 12,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "durability_1"
+                    }
+                ]
+            }
+        },
+        "durability_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:diamond_chestplate",
+            "title": "Durability 3",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [-3, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.armor",
+            "amount": 20,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e7ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "durability_4"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 20,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "durability_2"
+                    }
+                ]
+            }
+        },
+        "durability_4": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:netherite_chestplate",
+            "title": "Durability 4",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [-4, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.armor",
+            "amount": 25,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc1d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 40,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "durability_3"
+                    }
+                ]
+            }
+        },
+        "strength_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:stone_sword",
+            "title": "Durability 1",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [1, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 10,
+            "operation": 0,
+            "uuid": "498be4fb-af14-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "strength_2"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 3,
+                        "flat_levels": true
+                    }
+                ]
+            }
+        },
+        "strength_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_sword",
+            "title": "Durability 2",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [2, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 15,
+            "operation": 0,
+            "uuid": "498ba4fb-af07-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "strength_3"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 12,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "strength_1"
+                    }
+                ]
+            }
+        },
+        "strength_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:diamond_sword",
+            "title": "Durability 3",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [3, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 20,
+            "operation": 0,
+            "uuid": "498be4fb-af08-42f2-8948-e7ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "strength_4"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 20,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "strength_2"
+                    }
+                ]
+            }
+        },
+        "strength_4": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:netherite_sword",
+            "title": "Strength 4",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": 9,
+            "gui_position": [4, 0],
+            "description": "null",
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 25,
+            "operation": 0,
+            "uuid": "498be4fb-af05-42f2-8948-e6ccdc1d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:experience_level_buyable",
+                        "xp_level": 40,
+                        "flat_levels": true
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "power": "null",
+                        "ability": "strength_3"
+                    }
+                ]
+            }
+        },
+        "etc attributes": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "Base Attributes",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "attribute @s minecraft:generic.knockback_resistance base set 5",
+                "attribute @s minecraft:generic.attack_knockback base set 1.2",
+                "attribute @s minecraft:generic.max_health base set 40",
+                "attribute @s palladium:flight_speed base set 0.6",
+                "attribute @s gravecore:fall_resistance base set 500"
+            ],
+            "last_tick_commands": [
+                "attribute @s minecraft:generic.knockback_resistance base set 0",
+                "attribute @s minecraft:generic.attack_knockback base set 0",
+                "attribute @s palladium:flight_speed base set 0.0",
+                "attribute @s minecraft:generic.max_health base set 40",
+                "attribute @s gravecore:fall_resistance base set 3"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "size": {
+            "type": "palladium:size",
+            "icon": "palladium:textures/icon/size.png",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "scale": 1.4,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "sonic Shriek": {
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:echo_shard",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0, 1],
+            "description": "null",
+            "energy_beam": "example:energy_beam",
+            "damage_type": "null",
+            "damage": 10,
+            "max_distance": 30,
+            "speed": 0.5,
+            "set_on_fire_seconds": 0,
+            "cause_fire": false,
+            "smelt_blocks": false,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 120,
+                        "ticks": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ]
+            }
+        },
+        "sonic shriek particle": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "particle minecraft:sonic_boom ^ ^2 ^4",
+                "particle minecraft:sonic_boom ^ ^2 ^2",
+                "particle minecraft:sonic_boom ^ ^2 ^6",
+                "particle minecraft:sonic_boom ^ ^2 ^8",
+                "particle minecraft:sonic_boom ^ ^2 ^10",
+                "particle minecraft:sonic_boom ^ ^2 ^12",
+                "particle minecraft:sonic_boom ^ ^2 ^14",
+                "particle minecraft:sonic_boom ^ ^2 ^16",
+                "particle minecraft:sonic_boom ^ ^2 ^18",
+                "particle minecraft:sonic_boom ^ ^2 ^20",
+                "particle minecraft:sonic_boom ^ ^2 ^22",
+                "particle minecraft:sonic_boom ^ ^2 ^24",
+                "particle minecraft:sonic_boom ^ ^2 ^26",
+                "particle minecraft:sonic_boom ^ ^2 ^28",
+                "particle minecraft:sonic_boom ^ ^2 ^30",
+                "playsound minecraft:entity.warden.sonic_boom ambient @a[distance=..2]"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_first_tick",
+                        "power": "null",
+                        "ability": "sonic Shriek"
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "ground_tunnel_1": {
+            "type": "palladium:command",
+            "icon": "minecraft:sculk",
+            "title": "Ground_Tunnel",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "effect give @s invisibility 3 255 true",
+                "effect give @s darkness 3 255 true",
+                "effect give @s speed 3 2 true"
+            ],
+            "last_tick_commands": [
+                "effect clear @s invisibility",
+                "effect clear @s darkness",
+                "effect clear @s speed"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 600,
+                        "ticks": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ]
+            }
+        },
+        "teleport": {
+            "type": "palladium:command",
+            "icon": "minecraft:cobbled_deepslate",
+            "title": "Teleport",
+            "bar_color": "pink",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "gui_position": [0, -1],
+            "description": "Teleports you to an open spot",
+            "first_tick_commands": [
+                "execute if block ^ ^ ^15 air run teleport @s ^ ^ ^15"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 720,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ]
+            }
+        },
+        "Ground_Slam_1": {
+            "type": "palladium:command",
+            "icon": "minecraft:deepslate_iron_ore",
+            "title": "Ground Slam",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": [0, -2],
+            "description": "Slam into the ground with incredible strength",
+            "first_tick_commands": [
+                "effect give @s levitation 1 15 true"
+            ],
+            "last_tick_commands": [
+                "execute unless block ~ ~-1 ~ air run playsound minecraft:entity.warden.sonic_boom ambient @a[distance=..15]",
+                "execute unless block ~ ~-1 ~ air run particle minecraft:explosion_emitter"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 1800,
+                        "ticks": 50,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "Warden Strength"
+                    }
+                ]
+            }
+        },
+        "Ground_Slam_2": {
+            "type": "gravecore:aoe_damage",
+            "icon": "minecraft:fire_charge",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 10,
+            "damage": 15,
+            "fire_ticks": 0,
+            "damage_type": "null",
+            "cone": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_last_tick",
+                        "power": "null",
+                        "ability": "Ground_Slam_1"
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}
