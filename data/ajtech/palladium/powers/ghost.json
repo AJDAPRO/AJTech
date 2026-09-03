@@ -1,0 +1,74 @@
+{
+    "name": "Ghost",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "base": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "effect give @s invisibility infinite 255 true",
+                "attribute @s palladium:flight_speed base set 0.5"
+            ],
+            "last_tick_commands": [
+                "effect clear @s invisibility",
+                "attribute @s palladium:flight_speed base set 0"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        },
+        "base2": {
+            "type": "palladium:invisibility",
+            "icon": "palladium:textures/icon/invisibility.png",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        },
+        "base3": {
+            "type": "palladium:intangibility",
+            "icon": "minecraft:blaze_rod",
+            "title": "Intangibility",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "vertical": true,
+            "whitelist": "null",
+            "blacklist": "palladium:prevents_intangibility",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

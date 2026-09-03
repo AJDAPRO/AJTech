@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:redstone_wire",
+    "minecraft:redstone_block",
+    "minecraft:redstone_lamp",
+    "minecraft:redstone_ore",
+    "minecraft:deepslate_redstone_ore",
+    "minecraft:trapped_chest",
+    "minecraft:tnt",
+    "palladium:redstone_flux_crystal_geode",
+    "palladium:deepslate_redstone_flux_crystal_geode"
+  ]
+}
