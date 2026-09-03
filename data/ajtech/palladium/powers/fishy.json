@@ -1,0 +1,33 @@
+{
+    "name": "fishy",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "base": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "execute if block ~ ~ ~ water run attribute @s minecraft:generic.attack_damage base set 3",
+                "execute if block ~ ~ ~ air run attribute @s minecraft:generic.attack_damage base set 1",
+                "execute if block ~ ~ ~ water run attribute @s minecraft:generic.armor base set 15",
+                "execute if block ~ ~ ~ air run attribute @s minecraft:generic.armor base set 0",
+                "attribute @s forge:swim_speed base set 7"
+            ],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        }
+    }
+}

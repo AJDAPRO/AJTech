@@ -1,0 +1,97 @@
+{
+    "name": "size_manipulation weaker",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "ajtech:textures/icons/red_pym_disc.png",
+    "gui_display_type": "tree",
+    "abilities": {
+        "grow": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/blue_pym_disc.png",
+            "title": "Grow",
+            "bar_color": "blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "Grows the player to twice their size",
+            "first_tick_commands": [
+                "execute if score @s Scale < @s maxscale run scale multiply 2 @s",
+                "execute if score @s Scale < @s maxscale run scoreboard players add @s Scale 1"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 5,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "shrink": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/red_pym_disc.png",
+            "title": "Shrink",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "Shrinks the player to half their size",
+            "first_tick_commands": [
+                "execute if score @s Scale > @s minscale run scale multiply pehkui:base 0.5 @s",
+                "execute if score @s Scale > @s minscale run scoreboard players remove @s Scale 1"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 5,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "base": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "scoreboard objectives add Scale dummy",
+                "scoreboard objectives add maxscale dummy",
+                "scoreboard objectives add minscale dummy",
+                "scoreboard players set @s Scale 0",
+                "scoreboard players set @s maxscale 2",
+                "scoreboard players set @s minscale -2"
+            ],
+            "last_tick_commands": [
+                "scoreboard players set @s Scale 0",
+                "scale set 1 @s"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        }
+    }
+}

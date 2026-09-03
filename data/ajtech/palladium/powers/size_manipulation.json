@@ -1,0 +1,310 @@
+{
+    "name": "size manipulation",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "grow": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/blue_pym_disc.png",
+            "title": "grow",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "scale multiply pehkui:base 2"
+            ],
+            "last_tick_commands": [
+                "scale set pehkui:base 1"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_grow"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "shrink": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/red_pym_disc.png",
+            "title": "shrink",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "scale multiply pehkui:base 0.25"
+            ],
+            "last_tick_commands": [
+                "scale set pehkui:base 1"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "grow"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_grow"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "glide": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s minecraft:slow_falling 2 9 true"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "minecraft:paper"
+                        },
+                        "slot": "mainhand"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "shrink"
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "super_shrink"
+                    }  
+                ]
+            }
+        },
+        "super_shrink": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/red_pym_vial.png",
+            "title": "super shrink",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "scale multiply pehkui:base 0.025"
+            ],
+            "last_tick_commands": [
+                "scale set pehkui:base 1"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "grow"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_grow"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "super_grow": {
+            "type": "palladium:command",
+            "icon": "ajtech:textures/icons/blue_pym_vial.png",
+            "title": "super grow",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "scale multiply pehkui:base 4"
+            ],
+            "last_tick_commands": [
+                "scale set pehkui:base 1"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "super_shrink"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "grow"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "shoot_shrink": {
+            "type": "palladium:energy_beam",
+            "icon": "ajtech:textures/icons/red_pym_disc.png",
+            "title": "Shrink Beam",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": [0, 1],
+            "description": "A beam that shrinks the target dont hit the wrong person",
+            "energy_beam": "ajtech:pymbeam",
+            "damage_type": "null",
+            "damage": 2,
+            "max_distance": 30,
+            "speed": 1,
+            "set_on_fire_seconds": 0,
+            "cause_fire": false,
+            "smelt_blocks": false,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [
+                "execute positioned ~ ~ ~ run scale subtract pehkui:base 0.025 @e[limit=1,distance=..3,tag=!pym_safe]"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 1,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "base": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [
+                "tag @s add pym_safe"
+            ],
+            "last_tick_commands": [
+                "tag @s remove pym_safe"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        }
+    }
+}
