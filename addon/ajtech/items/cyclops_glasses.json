@@ -1,0 +1,23 @@
+{
+    "type": "palladium:armor",
+    "slot": "head",
+    "armor_material": "minecraft:gold",
+    "armor_renderer": "test:item_renderer",
+    "openable": false,
+    "opening_time": 10,
+    "opened_sound": "minecraft:item.armor.equip_leather",
+    "closed_sound": "minecraft:item.armor.equip_leather",
+    "opening_toggle_sound": "minecraft:item.armor.equip_leather",
+    "max_stack_size": 1,
+    "creative_mode_tab": "minecraft:combat",
+    "rarity": "rare",
+    "is_fire_resistant": false,
+    "tooltip": [
+        "holds back your optic beams",
+        {
+            "translate": "item.ajtech.cyclops_glasses.description",
+            "color": "#FF0000",
+            "underlined": false
+        }
+    ]
+}

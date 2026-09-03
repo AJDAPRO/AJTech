@@ -1,0 +1,35 @@
+{
+    "name": "Nuclear Explosion",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/orange_wool.png",
+    "icon": "minecraft:tnt",
+    "gui_display_type": "tree",
+    "abilities": {
+        "atomic blast": {
+            "type": "gravecore:explode",
+            "icon": "minecraft:fire_charge",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "explosion": 50,
+            "fire": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 0,
+                        "ticks": 1,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

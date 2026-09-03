@@ -1,0 +1,151 @@
+{
+    "name": "Cyclops(Mutant)",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "palladium:redstone_flux_crystal",
+    "gui_display_type": "tree",
+    "abilities": {
+        "laser beam": {
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:blaze_rod",
+            "title": "Optic blasts",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": [0.25, -1],
+            "description": "Shoot an Optic blasts from your eye",
+            "energy_beam": "ajtech:cyclops_beam",
+            "damage_type": "null",
+            "damage": 15,
+            "max_distance": 100,
+            "speed": 0,
+            "set_on_fire_seconds": 0,
+            "cause_fire": true,
+            "smelt_blocks": true,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "close eyes"
+                            },
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "turn on lasers"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "close eyes": {
+            "type": "palladium:command",
+            "icon": "minecraft:black_concrete_powder",
+            "title": "Close eyes",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [-0.25, -1],
+            "description": "Stop your Optic blasts without glasses",
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "effect clear @s minecraft:blindness",
+                "effect clear @s minecraft:darkness"
+            ],
+            "commands": [
+                "effect give @s minecraft:blindness infinite 255 true",
+                "effect give @s minecraft:darkness infinite 255 true"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "power": "null",
+                                "ability": "turn on lasers"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "turn on lasers": {
+            "type": "palladium:energy_beam",
+            "icon": "palladium:redstone_flux_crystal",
+            "title": "Turn on lasers",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": [0, -1],
+            "description": "Toggle your Optic blasts while using Glasses",
+            "energy_beam": "ajtech:cyclops_beam",
+            "damage_type": "null",
+            "damage": 8,
+            "max_distance": 100,
+            "speed": 0.5,
+            "set_on_fire_seconds": 0,
+            "cause_fire": true,
+            "smelt_blocks": true,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 960,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "ajtech:cyclops_glasses"
+                        },
+                        "slot": "head"
+                    }
+                ]
+            }
+        },
+        "base desc and attributes": {
+            "type": "palladium:command",
+            "icon": "ajtech:cyclops_glasses",
+            "title": "Cyclops",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": [0 ,0],
+            "description": "Based on Cyclops from X-Men you can shoot optic blasts from your eyes",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [],
+                "unlocking": []
+            }
+        }
+    }
+}

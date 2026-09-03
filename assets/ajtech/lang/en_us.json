@@ -1,3 +1,5 @@
 {
-    "pack.ajtech.name": "AJ Tech"
+    "pack.ajtech.name": "AJ Tech",
+    "item.ajtech.cyclops_glasses": "Optic Glasses",
+    "item.ajtech.cyclops_glasses.description": "Put on head"
 }

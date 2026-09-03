@@ -1,0 +1,48 @@
+{
+    "name": "Power Selector",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "tree",
+    "abilities": {
+        "Adrimark": {
+            "type": "palladium:command",
+            "icon": "minecraft:jack_o_lantern",
+            "title": "Adrimark",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": [0, 0],
+            "description": "gives you the powers of Adrimark",
+            "first_tick_commands": [
+                "superpower add ajtech:pumpkin_king_adrimark @s"
+            ],
+            "last_tick_commands": [
+                "superpower remove ajtech:power_selector @s"
+            ],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 0,
+                        "ticks": 3,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_buyable",
+                        "ingredient": {
+                            "item": "minecraft:carved_pumpkin"
+                        },
+                        "amount": 1
+                    }
+                ]
+            }
+        }
+    }
+}

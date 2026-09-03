@@ -5,7 +5,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="ajtech"
-version="1.0.0"
+version="0.1.0"
 logoFile = "logo.png"
 logoBlur = false
 displayName="AJ Tech"
